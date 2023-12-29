@@ -1,0 +1,88 @@
+import java.util.*;
+
+class Frame{
+    int frameno;
+    String data;
+}
+public class Frames{
+  public static void main(String args []){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Input the number of frames");
+    int n=sc.nextInt();
+    Frame frames[]=new Frame[n];
+    for (int i=0;i<n;i++){
+        frames[i]=new Frame();
+    }
+    System.out.println("Input the frame data");
+      for (int i=0;i<n;i++){
+        System.out.println("Frameno : ");
+        frames[i].frameno=sc.nextInt();
+        System.out.println("Frame data : ");
+        frames[i].data=sc.next();
+      }
+      System.out.println("Original frame data");
+      for(int i=0;i<n;i++)
+      {
+
+        System.out.println("Frameno : "+frames[i].frameno+" Data : "+frames[i].data);
+
+      }
+      for (int i=0;i<n-1;i++)
+      {
+        for (int j=i+1;j<n;j++)
+           {
+            if (frames[i].frameno >frames[j].frameno){
+                Frame temp=new Frame();
+                temp=frames[i];
+                frames[i]=frames[j];
+                frames[j]=temp;
+            }
+           }
+      }
+
+
+
+
+
+      System.out.println("Sorted frame data");
+      for(int i=0;i<n;i++)
+      {
+
+        System.out.println("Frameno : "+frames[i].frameno+" Data : "+frames[i].data);
+        
+      }
+    }
+}
+
+
+
+
+Input the number of frames
+4 
+Input the frame data
+Frameno : 
+1
+Frame data : 
+me
+Frameno : 
+6
+Frame data : 
+jkhj
+Frameno : 
+3
+Frame data : 
+hjsjg
+Frameno : 
+78
+Frame data : 
+hsuag
+Original frame data
+Frameno : 1 Data : me
+Frameno : 6 Data : jkhj
+Frameno : 3 Data : hjsjg
+Frameno : 78 Data : hsuag
+Sorted frame data
+Frameno : 1 Data : me
+Frameno : 3 Data : hjsjg
+Frameno : 6 Data : jkhj
+Frameno : 78 Data : hsuag
